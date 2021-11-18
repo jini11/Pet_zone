@@ -17,7 +17,7 @@ public class UserDAO {
 	        try{
 	            Class.forName("com.mysql.cj.jdbc.Driver");
 	            conn = DriverManager.getConnection(url, user, password);
-	        } catch (Exception e) {
+	        } catch (Exception e) { 
 	            e.printStackTrace();
 	        }
 	    }
