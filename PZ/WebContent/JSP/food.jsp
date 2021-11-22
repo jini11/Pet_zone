@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="pz.PzDAO" %>
+<%@ page import="pz.Pz" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +13,18 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
 	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 	<title>나도반함-식당</title>
-
+	
 </head>
 
 
 <body>
+	<%
+		int pageNumber = 1;
+		int index = 1;
+		if(request.getParameter("pageNumber") != null) {
+			pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+		}
+	%>
 	<div>
 		<!-- 헤더영역 시작 -->
 		<!-- 사이트의 소개나 네비게이션 등을 표시하는 영역 -->

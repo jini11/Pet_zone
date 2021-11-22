@@ -94,6 +94,16 @@ p{
 	width : 100px;
 }
 
+.row div{
+	margin:50px auto auto 180px;
+}
+
+.table-striped table{
+	width: 1600px;
+	text-align:center; 
+	border:1px solid #dddddd
+}
+
 /* 푸터 홈페이지 설명 영역 */
 .footer {
 	width : 100%;

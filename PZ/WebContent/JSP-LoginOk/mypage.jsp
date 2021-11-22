@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %>
 
+<jsp:useBean id="user" class="user.User" scope="page" />
+<jsp:setProperty name="user" property="userID" />
+<jsp:setProperty name="user" property="userPassword" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +43,7 @@
    <br>
    <img src="../Images/mypage_profile_logo.png" class ="profile_logo">
    <br>
-   <p class="mypage_id">00 님</p> <!--db랑 연결해서 해당 아이디 갖고 오는 부분 -->
+   <p class="mypage_id"><%= session.getAttribute("userID") %> 님</p> <!--db랑 연결해서 해당 아이디 갖고 오는 부분 -->
    <br>
    <table class="edit_table">
      <tr>
@@ -53,7 +58,9 @@
      </tr>
    </table>
    <br><br>
-   <a href="../main.jsp" class="button_logout" onclick="Logout_alert()">LOGOUT </a>
+   <form method="post" action="../logoutAction.jsp">
+   	<a href="#" class="button_logout" onclick="Logout_alert()">LOGOUT </a>
+   </form>
    <a href="../main.jsp" class="button_dropout" onclick="Dropout_alert()">DROP OUT</a>
  </div>
 
