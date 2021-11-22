@@ -51,23 +51,23 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
-			<table class="table table-striped">
+		<div class="row" style="margin:50px auto auto 180px;">
+			<table class="table table-striped table-bordered table-hover" style="width: 1600px;	text-align:center; border:1px solid #000000; border-collapse: collapse;">
 				<thead>
-					<tr>
-						<th style="backgound-color:#eeeeee; text-align: center;">번호</th>
-						<th style="backgound-color:#eeeeee; text-align: center;">이름</th>
-						<th style="backgound-color:#eeeeee; text-align: center;">주소</th>
-						<th style="backgound-color:#eeeeee; text-align: center;">전화번호</th>
-						<th style="backgound-color:#eeeeee; text-align: center;">평일</th>
-						<th style="backgound-color:#eeeeee; text-align: center;">주말</th>
-						<th style="backgound-color:#eeeeee; text-align: center;">휴무</th>
+					<tr style="border: 1px solid #000000">
+						<th style="text-align: center;">번호</th>
+						<th style="text-align: center;">이름</th>
+						<th style="text-align: center;">주소</th>
+						<th style="text-align: center;">전화번호</th>
+						<th style="text-align: center;">평일</th>
+						<th style="text-align: center;">주말</th>
+						<th style="text-align: center;">휴무</th>
 					</tr>
 				</thead>
 				<tbody>
 					<%
 						PzDAO pzDAO = new PzDAO();
-						ArrayList<Pz> list = pzDAO.getList(pageNumber);
+						ArrayList<Pz> list = pzDAO.getList(pageNumber,"all");
 						for(int i=0;i<list.size();i++) {
 					%>
 					<tr>

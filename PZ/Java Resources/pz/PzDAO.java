@@ -37,8 +37,16 @@ public class PzDAO {
     	return -1;
     }
     
-    public ArrayList<Pz> getList(int pageNumber) {
-    	String SQL = "SELECT * FROM pet_zone ORDER BY pz_id LIMIT ?, 20";
+    public ArrayList<Pz> getList(int pageNumber, String type) {
+    	String SQL = "";
+    	if(type == "all")
+    		SQL = "SELECT * FROM pet_zone ORDER BY pz_id LIMIT ?, 20";
+    	else if(type == "food")
+    		SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D001','D002') ORDER BY pz_id LIMIT ?, 20";
+    	else if(type == "accommodation")
+    		SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D003','D004') ORDER BY pz_id LIMIT ?, 20";
+    	else if(type == "outdoors")
+    		SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D005','D006','D007') ORDER BY pz_id LIMIT ?, 20";
     	ArrayList<Pz> list = new ArrayList<Pz>();
     	try {
     		PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -77,4 +85,6 @@ public class PzDAO {
     	}
     	return false;
     }
+    
+    
 }

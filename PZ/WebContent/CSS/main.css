@@ -94,15 +94,6 @@ p{
 	width : 100px;
 }
 
-.row div{
-	margin:50px auto auto 180px;
-}
-
-.table-striped table{
-	width: 1600px;
-	text-align:center; 
-	border:1px solid #dddddd
-}
 
 /* 푸터 홈페이지 설명 영역 */
 .footer {
@@ -128,12 +119,13 @@ p{
 	border-radius: 30px;
 }
 
+/*
 table td {
 	border: solid gray;
 	border: none;
 	border-spacing: 0px;
 }
-
+*/
 /*-------------로그아웃 페이지-------------*/
 .button_logout{
 	text-align:center;
