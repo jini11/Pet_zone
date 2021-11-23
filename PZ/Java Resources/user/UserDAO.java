@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class UserDAO {
 	 	private Connection conn;
@@ -56,4 +57,22 @@ public class UserDAO {
 	    	}
 	    	return -1; //데이터베이스 오류
 	    }
+	    
+	    public ArrayList<User> mypage_set(String userID, String userPassword) {
+            ArrayList<User> list = new ArrayList<User>();
+            String SQL = "SELECT userName, userEmail FROM USER WHERE userID = ?";
+            try{
+                pstmt = conn.prepareStatement(SQL);
+                pstmt.setString(1, userID);
+                rs = pstmt.executeQuery();
+                if(rs.next()) {
+                	User user = new User();
+                	user.setUserName(rs.getString(1));
+                	user.setUserEmail(rs.getString(2));
+                    list.add(user);                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return list;
+        }
 }

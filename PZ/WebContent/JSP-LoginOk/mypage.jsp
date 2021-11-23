@@ -2,10 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ page import="user.UserDAO" %>
 <%@ page import="java.io.PrintWriter" %>
-
+<%@ page import="user.User" %>
+<%@ page import="java.util.ArrayList" %>
 <jsp:useBean id="user" class="user.User" scope="page" />
 <jsp:setProperty name="user" property="userID" />
 <jsp:setProperty name="user" property="userPassword" />
+<jsp:setProperty name="user" property="userName" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,19 +45,27 @@
    <br>
    <img src="../Images/mypage_profile_logo.png" class ="profile_logo">
    <br>
-   <p class="mypage_id"><%= session.getAttribute("userID") %> 님</p> <!--db랑 연결해서 해당 아이디 갖고 오는 부분 -->
+   <%
+   		UserDAO userDAO = new UserDAO();
+  		ArrayList<User> list = userDAO.mypage_set((String)session.getAttribute("userID"),(String)session.getAttribute("userPassword"));
+  		for(int i=0;i<list.size();i++) {
+   %>
+   <p class="mypage_id"><%= list.get(i).getUserName() %> 님</p> <!--db랑 연결해서 해당 아이디 갖고 오는 부분 -->
    <br>
    <table class="edit_table">
      <tr>
 		 <td><p><b>PW</b></p></td>
-       <td><b>**********</b></td> <!-- db에서 비밀번호 갖고 와서 자릿수만큼 *로 표시 해야 함 -->
+       <td><b><%= session.getAttribute("userPassword") %></b></td> <!-- db에서 비밀번호 갖고 와서 자릿수만큼 *로 표시 해야 함 -->
        <td><button class="edit" onclick="EditPW()">EDIT</button></td>
      </tr>
      <tr>
 		 <td><p><b>E-mail</b></p></td>
-		 <td><b>~~~~~~@naver.com</b></td> <!-- db에서 이메일 갖고 와서 표시 해야 함 -->
+		 <td><b><%= list.get(i).getUserEmail() %> </b></td> <!-- db에서 이메일 갖고 와서 표시 해야 함 -->
        <td><button class="edit" onclick="EditEmail()">EDIT</button></td>
      </tr>
+     <%
+		}
+	 %>
    </table>
    <br><br>
    <form method="post" action="../logoutAction.jsp">
