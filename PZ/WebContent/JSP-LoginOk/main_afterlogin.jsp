@@ -43,9 +43,9 @@
 	<div>
 		<table class="main_table">
 			<tr>
-				<td><a href="outdoors.jsp"><img src="../Images/outdoors.png"><p>야외</p></td>
 				<td><a href="food.jsp"><img src="../Images/food.png"><p>음식점</p></a></td>
 				<td><a href="accommodation.jsp"><img src="../Images/accommodation.png"><p>숙박</p></td>
+				<td><a href="outdoors.jsp"><img src="../Images/outdoors.png"><p>야외</p></td>
 				<td><a href="all.jsp"><img src="../Images/all.png"><p>전체</p></td>
 
 			</tr>

@@ -13,9 +13,9 @@
 <body>
 	<section class="edit_pw-form">
 		<h1>EDIT PW</h1>
-		<form action="">
+		<form action="edit_pwAction.jsp">
 			<div class="int-area">
-				<input type="password" name="pw" id="pw" autocomplete="off" required>
+				<input type="password" name="userPassword" id="pw" autocomplete="off" required>
 				<label for="pw">현재 비밀번호</label>
 			</div>
 			<div class="int-area">
@@ -54,6 +54,11 @@
 			}
      		 else if($(edit_pw2).val() == ""){
 				$(edit_pw2).next('label').addClass('warning');
+				setTimeout(function(){
+					$('label').removeClass('warning');
+				},1500);
+			}else if($(edit_pw).val() == $(edit_pw2).val()){
+				$(edit_pw).next('label').addClass('warning');
 				setTimeout(function(){
 					$('label').removeClass('warning');
 				},1500);

@@ -15,17 +15,17 @@
 <body>
 	<section class="find-pw-form">
 		<h1>FIND PW</h1>
-		<form action="">
+		<form action="../emailSendAction.jsp" method="post">
 			<div class="int-area">
-				<input type="text" name="username" id="name" autocomplete="off" required>
+				<input type="text" name="userName" id="name" autocomplete="off" required>
 				<label for="name">USER NAME</label>
 			</div>
-      <div class="int-area">
-				<input type="text" name="id" id="id" autocomplete="off" required>
+    	    <div class="int-area">
+				<input type="text" name="userID" id="id" autocomplete="off" required>
 				<label for="id">USER ID</label>
 			</div>
 			<div class="int-area">
-				<input type="email" name="email" id="email" autocomplete="off" required>
+				<input type="email" name="userEmail" id="email" autocomplete="off" required>
 				<label for="email">USER EMAIL</label>
 			</div>
 			<div class="btn-area">
