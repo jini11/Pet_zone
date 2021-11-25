@@ -147,4 +147,25 @@ public class UserDAO {
 		}
 		return null; // 데이터베이스 오류
 	}
+	
+    public String findID(String name, String email){ 
+    	String userID = null;  
+    	
+    	try {
+	    	String SQL="select userID from user where userName=? and userEmail=?";
+    		
+	    	pstmt = conn.prepareStatement(SQL);
+    		pstmt.setString(1, name); 
+    		pstmt.setString(2, email); 
+	    	rs = pstmt.executeQuery(); 
+	    	if(rs.next()){
+	    	    userID=rs.getString("userID");
+	    	}
+	   
+    	} catch(Exception e) {
+    		  System.out.println(e);
+    	}
+    	
+    	return userID;
+    }
 }

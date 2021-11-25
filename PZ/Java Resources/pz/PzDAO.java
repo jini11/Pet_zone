@@ -86,5 +86,8 @@ public class PzDAO {
     	return false;
     }
     
+    public void bookmark(String str) {
+    	System.out.println(str);
+    }
     
 }
