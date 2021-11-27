@@ -70,3 +70,4 @@ function change_area(key, sel) {
 		sel.options[i + 1] = new Option(name[i], val[i]);
 	}
 }
+

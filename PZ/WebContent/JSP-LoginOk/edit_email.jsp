@@ -15,7 +15,7 @@
 <body>
 	<section class="edit_email-form">
 		<h1>EDIT Email</h1>
-		<form action="">
+		<form action="edit_emailAction.jsp">
 			<div class="int-area">
 				<input type="email" name="edit_email" id="edit_email" autocomplete="off" required>
 				<label for="edit_email">새 이메일</label>

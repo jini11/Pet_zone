@@ -28,7 +28,7 @@
 	String from = "lje8213@gmail.com";
 	String to = result;
 	String subject = "[나도반함] - 비밀번호 찾기 관련 이메일 인증";
-	String text = "비밀번호는 "+ userDAO.getUserPassword(user.getUserID())+ " 입니다."; /*동빈나 9강 - 18:12*/
+	String text = "비밀번호는 "+userDAO.fourcutPw(userDAO.getUserPassword(user.getUserID()))+ " 입니다.";
 	 
 	Properties props = new Properties();
 	props.put("mail.smtp.ssl.protocols", "TLSv1.2");
@@ -59,7 +59,7 @@
         script.println("location.href = 'JSP/login.jsp'");
         script.println("</script>");
 	}catch(Exception e){
-		e.printStackTrace();  /*동빈나 9강 - 20:34*/
+		e.printStackTrace(); 
 	}
 	
 %>

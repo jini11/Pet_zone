@@ -21,18 +21,19 @@ request.setCharacterEncoding("utf-8");
 		UserDAO userDAO = new UserDAO();
 		String oldPw = request.getParameter("userPassword");
 		String newPw = request.getParameter("edit_pw");
-	
+		String checkPw = request.getParameter("edit_pw2");
+		
 	    int result = userDAO.check_pw((String)session.getAttribute("userID"), oldPw);
 	    if(result ==1){
 	    	int result2 = userDAO.update_pw((String)session.getAttribute("userID"), newPw);
 	    	if(result2 == 0){
 	    		session.setAttribute("userPassword", newPw);
-	    		PrintWriter script = response.getWriter();
-	            script.println("<script>");
-	            script.println("alert('비밀번호가 정상적으로 변경되었습니다.')");
-	            script.println("window.close()");
-	            script.println("opener.location.reload()");
-	            script.println("</script>");
+                PrintWriter script = response.getWriter();
+                script.println("<script>");
+                script.println("alert('비밀번호가 정상적으로 변경되었습니다.')");
+                script.println("window.close()");
+                script.println("opener.location.reload()");
+                script.println("</script>");
 	    	}else if(result2 == -1){
 	    		PrintWriter script = response.getWriter();
 	            script.println("<script>");

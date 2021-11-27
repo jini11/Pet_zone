@@ -29,7 +29,7 @@
 				<label for="email">USER EMAIL</label>
 			</div>
 			<div class="btn-area">
-				<button type="submit" style="font-family:'Jua', sans-serif;" onclick="Notify_pw()">비밀번호 찾기</button>
+				<button type="submit" style="font-family:'Jua', sans-serif;">비밀번호 찾기</button>
 			</div>
 		</form>
 		<div class="caption">

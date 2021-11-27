@@ -14,8 +14,17 @@
 <link rel="stylesheet" type="text/css" href="../CSS/main.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
 	rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script >
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <title>나도반함-전체</title>
+<script type="text/javascript">
+	$("select[name=area1]").change(function() {
+		console.log($(this).val());
+		console.log($("select[name=area1] option:selected").text())
+	});
+	console.log($("#area1 option:selected").text())
+	console.log($("#area2 option:selected").text())
+</script>
 </head>
 <body>
 	<%
@@ -52,63 +61,69 @@
 
 	<div class="search">
 		<div style="margin: 50px auto auto 180px;">
-			<table class="area"
-				style="width: 1100px; height: 80px; text-align: center; border: 1px solid #000000; border-collapse: collapse;">
-				<thead>
-					<tr style="text-align: center;">
-						<th style="width:500px;"><select name="area1"
-							onChange="change_area(this.value,area2)" style="width:500px; height: 30px; margin-top:5px;">
-								<option>-선택-</option>
-								<option value='1'>서울특별시</option>
-								<option value='2'>부산광역시</option>
-								<option value='3'>대구광역시</option>
-								<option value='4'>인천광역시</option>
-								<option value='5'>광주광역시</option>
-								<option value='6'>대전광역시</option>
-								<option value='7'>울산광역시</option>
-								<option value='8'>세종특별자치시</option>
-								<option value='9'>강원도</option>
-								<option value='10'>경기도</option>
-								<option value='11'>경상남도</option>
-								<option value='12'>경상북도</option>
-								<option value='13'>전라남도</option>
-								<option value='14'>전라북도</option>
-								<option value='15'>제주특별자치도</option>
-								<option value='16'>충청남도</option>
-								<option value='17'>충청북도</option>
-						</select></th>
-						<th><select name="area2" style="width:500px; height:30px; margin-top:5px;">
-								<option>-선택-</option>
-								<option value='216'>광양시</option>
-								<option value='217'>나주시</option>
-								<option value='218'>목포시</option>
-								<option value='219'>순천시</option>
-								<option value='220'>여수시</option>
-								<option value='221'>강진군</option>
-								<option value='222'>고흥군</option>
-								<option value='223'>곡성군</option>
-								<option value='224'>구례군</option>
-								<option value='225'>담양군</option>
-								<option value='226'>무안군</option>
-								<option value='227'>보성군</option>
-								<option value='228'>신안군</option>
-								<option value='229'>영광군</option>
-								<option value='230'>영암군</option>
-								<option value='231'>완도군</option>
-								<option value='232'>장성군</option>
-								<option value='233'>장흥군</option>
-								<option value='234'>진도군</option>
-								<option value='235'>함평군</option>
-								<option value='236'>해남군</option>
-								<option value='237'>화순군</option>
-						</select></th>
-						<th style="width:500px; height:25px; margin-left: 5px;"><input type="submit" value="검색" style="padding: 4px 20px 4px 20px; margin-top:2px;"></th>
-					</tr>
-					<tr>
-						<td style="text-align:left;"><input type="radio"><label>현재 운영중인 곳만 보기</label></td>
-					</tr>
-				</thead>
-			</table>
+			<form name="select_area">
+				<table class="area"
+					style="width: 1100px; height: 80px; text-align: center; border: 1px solid #000000; border-collapse: collapse;">
+					<thead>
+						<tr style="text-align: center;">
+							<th style="width: 500px;">
+							<select name="area1" id="area1"	onChange="change_area(this.value, area2)" style="width: 500px; height: 30px; margin-top: 5px;">
+									<option>-선택-</option>
+									<option value='1'>서울특별시</option>
+									<option value='2'>부산광역시</option>
+									<option value='3'>대구광역시</option>
+									<option value='4'>인천광역시</option>
+									<option value='5'>광주광역시</option>
+									<option value='6'>대전광역시</option>
+									<option value='7'>울산광역시</option>
+									<option value='8'>세종특별자치시</option>
+									<option value='9'>강원도</option>
+									<option value='10'>경기도</option>
+									<option value='11'>경상남도</option>
+									<option value='12'>경상북도</option>
+									<option value='13'>전라남도</option>
+									<option value='14'>전라북도</option>
+									<option value='15'>제주특별자치도</option>
+									<option value='16'>충청남도</option>
+									<option value='17'>충청북도</option>
+							</select></th>
+							<th>
+							<select name="area2" id="area2"	style="width: 500px; height: 30px; margin-top: 5px;">
+									<option>-선택-</option>
+									<option value='216'>광양시</option>
+									<option value='217'>나주시</option>
+									<option value='218'>목포시</option>
+									<option value='219'>순천시</option>
+									<option value='220'>여수시</option>
+									<option value='221'>강진군</option>
+									<option value='222'>고흥군</option>
+									<option value='223'>곡성군</option>
+									<option value='224'>구례군</option>
+									<option value='225'>담양군</option>
+									<option value='226'>무안군</option>
+									<option value='227'>보성군</option>
+									<option value='228'>신안군</option>
+									<option value='229'>영광군</option>
+									<option value='230'>영암군</option>
+									<option value='231'>완도군</option>
+									<option value='232'>장성군</option>
+									<option value='233'>장흥군</option>
+									<option value='234'>진도군</option>
+									<option value='235'>함평군</option>
+									<option value='236'>해남군</option>
+									<option value='237'>화순군</option>
+							</select></th>
+
+							<th style="width: 500px; height: 25px; margin-left: 5px;"><button style="padding: 4px 20px 4px 20px; margin-top: 2px;">검색</button></th>
+							
+						</tr>
+						<tr>
+							<td style="text-align: left;"><input type="radio"><label>현재
+									운영중인 곳만 보기</label></td>
+						</tr>
+					</thead>
+				</table>
+			</form>
 		</div>
 	</div>
 
@@ -135,15 +150,14 @@
 					for (int i = 0; i < list.size(); i++) {
 					%>
 					<tr>
-						<td><%=20 * (pageNumber - 1) + (index++)%></td>
+						<td><%=20 * (pageNumber - 1) + index %></td>
 						<td><%=list.get(i).getPz_name()%></td>
 						<td><%=list.get(i).getPz_address()%></td>
 						<td><%=list.get(i).getPz_phone()%></td>
 						<td><%=list.get(i).getWd_time()%></td>
 						<td><%=list.get(i).getWe_time()%></td>
 						<td><%=list.get(i).getClosed()%></td>
-						<td><input type="checkbox" names="favorites"
-							onclick="CheckMark()"></td>
+						<td><input type="checkbox" name="check" id=<%= index %> value=<%=index++ %> onclick="CheckMark()"/></td>
 					</tr>
 					<%
 					}
@@ -170,6 +184,7 @@
 
 	<!-- 자바스크립트 파일 외부 참조-->
 	<script type="text/javascript" src="../JavaScript/area.js"></script>
+	<script type="text/javascript" src="../JavaScript/common.js"></script>
 </body>
 
 </html>
