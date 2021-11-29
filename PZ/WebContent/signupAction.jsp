@@ -17,7 +17,7 @@
 </head>
 <body>
     <%
-	    
+	  	
     	if(user.getUserID() == null || user.getUserPassword() == null || user.getUserName() == null || user.getUserEmail() == null) {
             PrintWriter script = response.getWriter();
             script.println("<script>");

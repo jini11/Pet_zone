@@ -60,6 +60,7 @@ cat2_name[17] = new Array('제천시', '청주시 상당구', '청주시 흥덕�
 
 function change_area(key, sel) {
 	if (key == '') return;
+	
 	var name = cat2_name[key];
 	var val = cat2_num[key];
 
@@ -67,7 +68,7 @@ function change_area(key, sel) {
 		sel.options[i] = null;
 	sel.options[0] = new Option('-선택-', '', '', 'true');
 	for (i = 0; i < name.length; i++) {
-		sel.options[i + 1] = new Option(name[i], val[i]);
+		sel.options[i + 1] = new Option(name[i], name[i]);
 	}
 }
 

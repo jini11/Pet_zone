@@ -19,7 +19,6 @@ a{
 
 p{
 	text-decoration : none;
-	font-family: 'Jua', sans-serif;
 }
 
 /* 헤더 상단 바 부분 */
@@ -94,18 +93,48 @@ p{
 	width : 100px;
 }
 
-
 /* 푸터 홈페이지 설명 영역 */
 .footer {
 	width : 100%;
-	height : 150px;
+	height : 200px;
 	position : relative;
-	left : 0;
-	bottom : 0;
+	bottom : 0px;
 	background-color: rgba(240, 182, 57, 0.329);
-	text-align:center;
 	color : rgb(180, 144, 44);
 }
+
+
+.footer_detail{
+	position: absolute;
+	width : 300px;
+	margin-left : 450px;
+}
+
+.footer_detail p{
+	font-size : 15px;
+}
+
+.footer_company{
+	position : absolute;
+	width: 300px;
+	margin-left : 810px;
+}
+
+.footer_company p{
+	font-size : 15px;
+}
+
+.footer_bank{
+	position : relative;
+	width: 300px;
+	margin-left : 1170px;
+}
+
+.footer_bank p{
+	font-size : 15px;
+}
+
+
 /*rgb(255,221,223)*/
 .type{
 	object-fit: cover;
@@ -119,13 +148,12 @@ p{
 	border-radius: 30px;
 }
 
-/*
 table td {
 	border: solid gray;
 	border: none;
 	border-spacing: 0px;
 }
-*/
+
 /*-------------로그아웃 페이지-------------*/
 .button_logout{
 	text-align:center;
@@ -193,6 +221,7 @@ table td {
 .mypage_id{
 	text-align:center;
 	font-size : 30px;
+	font-family: 'Jua', sans-serif;
 }
 
 /*마이페이지 - 비밀번호랑 email 수정 부분 테이블*/
@@ -209,4 +238,17 @@ table td {
 	background-color: #18C3B5;
 	border-radius:10px;
 	color: white;
+}
+
+/*-------------테이블 받아오기(로그인 전)----------*/
+.container th{
+	text-align : center;
+	font-family: 'Jua', sans-serif;
+	height : 30px;
+}
+
+.container td{
+	text-align : center;
+	font-family: 'Jua', sans-serif;
+	height : 25px;
 }

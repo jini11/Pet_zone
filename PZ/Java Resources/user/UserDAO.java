@@ -143,35 +143,43 @@ public class UserDAO {
 		return -1; // 데이터베이스 오류
 	}
 
-	public String getUserPassword(String userID) {
-		String SQL = "SELECT userPassword FROM user WHERE userID = ?";
-		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			rs = pstmt.executeQuery();
-			if (rs.next())
-				return rs.getString(1);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+	/*비밀번호 받아오기*/
+    public String getUserPassword(String userID) {
+        String SQL = "SELECT userPassword FROM user WHERE userID = ?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID);
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                return rs.getString(1);
+            }
+            return null;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-	public String getUserEmail(String userID, String userEmail) {
-		String SQL = "SELECT userEmail FROM user WHERE userID = ?";
-		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, userID);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				if (rs.getString(1).equals(userEmail))
-					return rs.getString(1);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null; // 데이터베이스 오류
-	}
+    /*이메일 받아오기*/
+    public String getUserEmail(String userID, String userEmail) {
+        String SQL = "SELECT userEmail FROM user WHERE userID = ?";
+        try {
+            pstmt = conn.prepareStatement(SQL);
+            pstmt.setString(1, userID); 
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                if(rs.getString(1).equals(userEmail)) {
+                    fourcutPw(rs.getString(1));
+                    return rs.getString(1);
+                }
+                return null;
+            }
+            return null;
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return null; // 데이터베이스 오류
+    }
 
 	public String findID(String name, String email) {
 		String userID = null;
@@ -234,4 +242,6 @@ public class UserDAO {
                 fourPw += '*';
             return fourPw;
         }
+    
+    
 }

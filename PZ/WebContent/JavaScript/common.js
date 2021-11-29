@@ -28,8 +28,7 @@ function afterlogin_showImage() {
 /*탈퇴하기 버튼 눌렀을 때 alert발생하기*/
 function Dropout_alert() {
 	if (confirm("나도반함을 탈퇴하시겠습니까?") == true) {
-		alert("탈퇴되었습니다.");
-		location.replace("../main.jsp");
+		location.replace("dropoutAction.jsp");
 		/* DB에서도 삭제하는 코드 작성해야 함 */
 	}
 	else {
@@ -84,50 +83,47 @@ function sign_up_chk() {
 	var pattern_chk4 = /[~!@#$%^&*()_+|<>?:{}]/;
 
 	/* 이름 체크 */
-	if (sign_up_name.length == 0) {
-		alert("이름을 입력해 주십시오.");
-		return;//exit 기능. return만 사용하면 null을 반환.
-	}
-	else if (sign_up_name.search(/\s/) != -1) {
+	if (sign_up_name.search(/\s/) != -1) {
+		location.replace("signup.jsp");
 		alert("이름에 공백은 들어갈 수 없습니다.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false; //exit 기능. return만 사용하면 null을 반환.
 	}
 	else if (pattern_chk1.test(sign_up_name)) {
 		alert("이름에 특수문자는 들어갈 수 없습니다.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false; //exit 기능. return만 사용하면 null을 반환.
 	}
 
 	/* 아이디 유효성 체크 */
-	if (sign_up_id.length == 0) {
+	else if (sign_up_id.length == 0) {
 		alert("아이디를 입력해 주십시오.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false;//exit 기능. return만 사용하면 null을 반환.
 	}
 	else if (sign_up_id.search(/\s/) != -1) {//아이디 공백체크
 		alert("아이디에 공백은 들어갈 수 없습니다.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false;//exit 기능. return만 사용하면 null을 반환.
 	}
 	else if (pattern_chk1.test(sign_up_id)) { //아이디 특수문자 체크
 		alert("아이디에 특수문자는 들어갈 수 없습니다.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false;//exit 기능. return만 사용하면 null을 반환.
 	}
 
 	/* 비밀번호 유효성 체크 */
 	else if (!pattern_chk2.test(sign_up_pw) || !pattern_chk3.test(sign_up_pw) || !pattern_chk4.test(sign_up_pw) || sign_up_pw.length < 8) {
 		alert("비밀번호는 8자리 이상 문자, 숫자, 특수문자로 구성하여야 합니다.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false;//exit 기능. return만 사용하면 null을 반환.
 	}
 
 	/* 이메일 체크 */
 	else if (sign_up_email.length == 0) {
 		alert("이메일을 입력하세요.");
-		location.replace("../JSP/signup.jsp");
-		return;//exit 기능. return만 사용하면 null을 반환.
+		return false;//exit 기능. return만 사용하면 null을 반환.
+	}
+
+	else {
+		alert("회원가입에 성공하셨습니다!");
+		location.replace("../JSP/login.jsp");
+		form.action = "../signupAction.jsp";
+		form.method = "post";
 	}
 }
 
@@ -220,12 +216,14 @@ function findPW_chk() {
 
 /*즐겨찾기 체크박스 눌렀을 때 반응 */
 function CheckMark() {
-	if ($("input:checkbox[name=check]").is(":checked") == true) {
+	System.out.println(document.querySelector("input[name=check]).checked"));
+	if ($("input:checkbox[name=check]").is(":checked") == false) {
 		if (confirm("즐겨찾기에 추가하시겠습니까?") == true) {
 			alert("즐겨찾기에 추가되었습니다.");
 			const checked = document.querySelectorAll('input[name="check"]:checked');
-			this.form.submit();
 			this.checked = true;
+			this.form.submit();
+
 		}
 		else {
 			alert("취소되었습니다.");
@@ -235,7 +233,7 @@ function CheckMark() {
 		}
 	}
 	else if ($("input:checkbox[name=check]").is(":checked") == false) {
-		if(confirm("즐겨찾기 취소하시겠습니까?") == true) {
+		if (confirm("즐겨찾기 취소하시겠습니까?") == false) {
 			alert("즐겨찾기가 취소되었습니다.");
 			const checked = document.querySelectorAll('input[name="check"]:checked');
 			this.form.submit();
@@ -243,8 +241,10 @@ function CheckMark() {
 		}
 		else {
 			alert("작업이 취소되었습니다.");
-			this.form.submit();
 			this.checked = false;
+			this.form.submit();
 		}
 	}
+
+
 }
