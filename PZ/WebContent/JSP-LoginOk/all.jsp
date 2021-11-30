@@ -13,7 +13,6 @@
 <!-- 웹 페이지와 외부 자원간의 관계를 정의, 주로 스타일시트(CSS)파일 링크에 사용됨. -->
 <link rel="stylesheet" type="text/css" href="../CSS/main.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <title>나도반함-전체</title>
 
 </head>
@@ -121,9 +120,6 @@
 				</table>
 			</form>
 		</div>
-
-
-		
 	</div>
 
 	<div class="container">
@@ -145,12 +141,9 @@
 				<tbody>
 					<%
 					String[] arr = {"서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시", "울산광역시","세종특별자치시", "강원도", "경기도", "경상남도", "경상북도", "전라남도", "전라북도", "제주특별자치도", "충청남도", "충청북도"};
-					//System.out.println(arr[Integer.parseInt(area1)-1]);
-					//System.out.println(area2);
 					String str ="";
 					try {
 						str = arr[Integer.parseInt(area1)-1];
-						System.out.println(str);
 					} catch (Exception e) {
 					}
 					PzDAO pzDAO = new PzDAO();
@@ -193,6 +186,53 @@
 		</div>
 	</div>
 
+	<br>
+	
+	<!-- 푸터 영역 시작 -->
+    <div class="footer" style="height : 200px;">
+        <footer>
+            <div class="footer_detail" style="position : absolute;margin-left : 450px;">
+                <br>
+                <p>
+                    고객센터 1234-1234<br>
+                </p>
+                <p>
+                    상담전화 13:00~16:00(평일)
+                </p>
+                <p>
+                    상담톡 10:00~16:00(평일)
+                </p>
+                <p>
+                    메일 nadobanham_123@naver.com
+                </p>
+            </div>
+            <div class="footer_company" style="position : absolute;margin-left : 810px;">
+                <p style="margin-left: 80px; font-size : 30px; font-family: Jua;">
+                    나도반함
+                </p>
+                <p>
+                    대표 : 이채정, 이지은, 손영주, 곽민지
+                </p>
+                <p>
+                    사업자등록번호 : 123-12-12345
+                </p>
+            </div>
+            <div class="footer_bank" style="position : absolute;margin-left : 1170px;">
+                <br>
+                <p style="margin-left: 100px;">
+                    BANK<br><br>
+                </p>
+                <p>
+                    농협은행 123-1234-1234-12<br>
+                </p>
+                <p>
+                    이채정(건반상점)
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- 푸터 영역 끝 -->
+    
 	<!-- 자바스크립트 파일 외부 참조-->
 	<script type="text/javascript" src="../JavaScript/area.js"></script>
 	<script type="text/javascript" src="../JavaScript/common.js"></script>

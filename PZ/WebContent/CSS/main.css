@@ -95,45 +95,44 @@ p{
 
 /* 푸터 홈페이지 설명 영역 */
 .footer {
-	width : 100%;
-	height : 200px;
-	position : relative;
-	bottom : 0px;
-	background-color: rgba(240, 182, 57, 0.329);
-	color : rgb(180, 144, 44);
+    width : 100%;
+    height : 250px;
+    position : relative;
+    bottom : 0px;
+    background-color: rgba(240, 182, 57, 0.329);
+    color : rgb(180, 144, 44);
 }
 
 
 .footer_detail{
-	position: absolute;
-	width : 300px;
-	margin-left : 450px;
+    position: absolute;
+    width : 300px;
+    margin-left : 450px;
 }
 
 .footer_detail p{
-	font-size : 15px;
+    font-size : 15px;
 }
 
 .footer_company{
-	position : absolute;
-	width: 300px;
-	margin-left : 810px;
+    position : absolute;
+    width: 300px;
+    margin-left : 810px;
 }
 
 .footer_company p{
-	font-size : 15px;
+    font-size : 15px;
 }
 
 .footer_bank{
-	position : relative;
-	width: 300px;
-	margin-left : 1170px;
+    position : relative;
+    width: 300px;
+    margin-left : 1170px;
 }
 
 .footer_bank p{
-	font-size : 15px;
+    font-size : 15px;
 }
-
 
 /*rgb(255,221,223)*/
 .type{

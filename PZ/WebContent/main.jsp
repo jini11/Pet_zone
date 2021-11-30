@@ -51,42 +51,38 @@
 	<!-- 콘텐츠 및 섹션 영역 끝 -->
 	<br>
 	<hr style = "width : 900px;">
-	
+	<br>	
 	<!-- 푸터 영역 시작 -->
-	<div class="footer" style="height : 200px;">
-		<footer>
-			<div class="footer_detail" style="position : absolute;margin-left : 450px;">
-				<br>
+    <div class="footer" style="height : 200px;">
+        <footer>
+            <div class="footer_detail" style="position : absolute;margin-left : 450px;">
+                <br>
                 <p>
                     고객센터 1234-1234<br>
                 </p>
                 <p>
-                    상담전화 13:00~16:00(평일)<br>
+                    상담전화 13:00~16:00(평일)
                 </p>
                 <p>
                     상담톡 10:00~16:00(평일)
                 </p>
-                <br>
                 <p>
                     메일 nadobanham_123@naver.com
                 </p>
             </div>
             <div class="footer_company" style="position : absolute;margin-left : 810px;">
-                <p style="margin-left: 80px; font-size : 35px; font-family: Jua;">
+                <p style="margin-left: 80px; font-size : 30px; font-family: Jua;">
                     나도반함
                 </p>
                 <p>
                     대표 : 이채정, 이지은, 손영주, 곽민지
                 </p>
                 <p>
-                    개인정보관리책임자 : 대표와 동일
-                </p>
-                <p>
                     사업자등록번호 : 123-12-12345
                 </p>
             </div>
             <div class="footer_bank" style="position : absolute;margin-left : 1170px;">
-                <br><br>
+                <br>
                 <p style="margin-left: 100px;">
                     BANK<br><br>
                 </p>
@@ -97,9 +93,9 @@
                     이채정(건반상점)
                 </p>
             </div>
-		</footer>
-	</div>
-	<!-- 푸터 영역 끝 -->
+        </footer>
+    </div>
+    <!-- 푸터 영역 끝 -->
 
 	<!-- 자바스크립트 파일 외부 참조-->
 	<script type="text/javascript" src="JavaScript/common.js"></script>

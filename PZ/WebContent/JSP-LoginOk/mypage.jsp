@@ -92,22 +92,52 @@
 	<br>
 	<br>
 	<br>
-	<div class="footer">
-		<footer>
-			<link rel="preconnect" href="https://fonts.gstatic.com">
-			<link
-				href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap"
-				rel="stylesheet">
-
-			<p>
-				<br> 마이페이지
-			</p>
-			<p>
-				개인정보 수정 및 즐겨찾기 기능을 이용할 수 있습니다.<br>
-			</p>
-			<p>많은 이용 부탁드립니다:)</p>
-		</footer>
-	</div>
+	
+	<!-- 푸터 영역 시작 -->
+    <div class="footer" style="height : 200px;">
+        <footer>
+            <div class="footer_detail" style="position : absolute;margin-left : 450px;">
+                <br>
+                <p>
+                    고객센터 1234-1234<br>
+                </p>
+                <p>
+                    상담전화 13:00~16:00(평일)
+                </p>
+                <p>
+                    상담톡 10:00~16:00(평일)
+                </p>
+                <p>
+                    메일 nadobanham_123@naver.com
+                </p>
+            </div>
+            <div class="footer_company" style="position : absolute;margin-left : 810px;">
+                <p style="margin-left: 80px; font-size : 30px; font-family: Jua;">
+                    나도반함
+                </p>
+                <p>
+                    대표 : 이채정, 이지은, 손영주, 곽민지
+                </p>
+                <p>
+                    사업자등록번호 : 123-12-12345
+                </p>
+            </div>
+            <div class="footer_bank" style="position : absolute;margin-left : 1170px;">
+                <br>
+                <p style="margin-left: 100px;">
+                    BANK<br><br>
+                </p>
+                <p>
+                    농협은행 123-1234-1234-12<br>
+                </p>
+                <p>
+                    이채정(건반상점)
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- 푸터 영역 끝 -->
+	
 	<script type="text/javascript" src="../JavaScript/common.js"></script>
 	<!-- script 위치는 body 안에서 맨 마지막 -->
 </body>

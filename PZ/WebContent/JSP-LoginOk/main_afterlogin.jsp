@@ -54,19 +54,51 @@
 	<!-- 콘텐츠 및 섹션 영역 끝 -->
 	<br>
 	<hr style = "width : 900px;">
+	<br>
 	<!-- 푸터 영역 시작 -->
-	<div class="footer">
-		<footer>
-			<link rel="preconnect" href="https://fonts.gstatic.com">
-			<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap" rel="stylesheet">
-
-			<p><br> 홈페이지 설명 </p>
-			<p> 반려견과 동반 입장이 가능한 펫존(음식점, 숙박시설, 야외)을 검색할 수 있는 홈페이지입니다.<br></p>
-			<p> 많은 이용 부탁드립니다:) </p>
-
-		</footer>
-	</div>
-	<!-- 푸터 영역 끝 -->
+    <div class="footer" style="height : 200px;">
+        <footer>
+            <div class="footer_detail" style="position : absolute;margin-left : 450px;">
+                <br>
+                <p>
+                    고객센터 1234-1234<br>
+                </p>
+                <p>
+                    상담전화 13:00~16:00(평일)
+                </p>
+                <p>
+                    상담톡 10:00~16:00(평일)
+                </p>
+                <p>
+                    메일 nadobanham_123@naver.com
+                </p>
+            </div>
+            <div class="footer_company" style="position : absolute;margin-left : 810px;">
+                <p style="margin-left: 80px; font-size : 30px; font-family: Jua;">
+                    나도반함
+                </p>
+                <p>
+                    대표 : 이채정, 이지은, 손영주, 곽민지
+                </p>
+                <p>
+                    사업자등록번호 : 123-12-12345
+                </p>
+            </div>
+            <div class="footer_bank" style="position : absolute;margin-left : 1170px;">
+                <br>
+                <p style="margin-left: 100px;">
+                    BANK<br><br>
+                </p>
+                <p>
+                    농협은행 123-1234-1234-12<br>
+                </p>
+                <p>
+                    이채정(건반상점)
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!-- 푸터 영역 끝 -->
 
 	<!-- 자바스크립트 파일 외부 참조-->
 	<script type="text/javascript" src="../JavaScript/common.js"></script>
