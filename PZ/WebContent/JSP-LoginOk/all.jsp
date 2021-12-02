@@ -11,8 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- <meta name="viewport" content="width=device-width", initial-scale="1"> -->
 <!-- 웹 페이지와 외부 자원간의 관계를 정의, 주로 스타일시트(CSS)파일 링크에 사용됨. -->
-<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+<link rel="stylesheet" type="text/css" href="../CSS/table.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?ver=1"></script>
 <title>나도반함-전체</title>
 
 </head>
@@ -33,6 +34,7 @@
 		area2 = request.getParameter("area2");
 	}
 	%>
+	<div class="wrapper">
 	<div>
 		<!-- 헤더영역 시작 -->
 		<!-- 사이트의 소개나 네비게이션 등을 표시하는 영역 -->
@@ -68,7 +70,7 @@
 							<th style="width: 500px;"><select name="area1" id="area1"
 								onChange="change_area(this.value, area2)"
 								style="width: 500px; height: 30px; margin-top: 5px;">
-									<option>-선택-</option>
+									<option value="" <% if(area1.contains("전체")) out.println("selected"); %>>전체</option>
 									<option value='1' <% if(area1.contains("서울특별시")) out.println("selected"); %>>서울특별시</option>
 									<option value='2' <% if(area1.contains("부산광역시")) out.println("selected"); %>>부산광역시</option>
 									<option value='3' <% if(area1.contains("대구광역시")) out.println("selected"); %>>대구광역시</option>
@@ -89,7 +91,7 @@
 							</select></th>
 							<th><select name="area2" id="area2"
 								style="width: 500px; height: 30px; margin-top: 5px;">
-									<option>-선택-</option>
+									<option value="">전체</option>
 									<option value='216'>광양시</option>
 									<option value='217'>나주시</option>
 									<option value='218'>목포시</option>
@@ -124,10 +126,10 @@
 
 	<div class="container">
 		<div class="row" style="margin: 50px auto auto 180px;">
-			<table class="table table-striped table-bordered table-hover"
-				style="width: 1600px; text-align: center; border: 1px solid #000000; border-collapse: collapse;">
+			<table class="table table-striped table-bordered table-hover fz_table"
+				style="width: 1600px; text-align: left; border-collapse: collapse; padding-bottom: 30px;">
 				<thead>
-					<tr style="border: 1px solid #000000">
+					<tr>
 						<th style="text-align: center;">번호</th>
 						<th style="text-align: center;">이름</th>
 						<th style="text-align: center;">주소</th>
@@ -140,30 +142,37 @@
 				</thead>
 				<tbody>
 					<%
-					String[] arr = {"서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시", "울산광역시","세종특별자치시", "강원도", "경기도", "경상남도", "경상북도", "전라남도", "전라북도", "제주특별자치도", "충청남도", "충청북도"};
+					String[] arr = {"전체", "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시", "울산광역시","세종특별자치시", "강원도", "경기도", "경상남도", "경상북도", "전라남도", "전라북도", "제주특별자치도", "충청남도", "충청북도"};
 					String str ="";
 					try {
-						str = arr[Integer.parseInt(area1)-1];
+						str = arr[Integer.parseInt(area1)];
 					} catch (Exception e) {
 					}
 					PzDAO pzDAO = new PzDAO();
 					ArrayList<Pz> list = pzDAO.getList(pageNumber, "all", str, area2); 
 					
-					
 					for (int i = 0; i < list.size(); i++) {
 					%>
+					
 					<tr>
-						<td><%= 20 * (pageNumber - 1) + index %></td>
-						<td><%= list.get(i).getPz_name() %></td>
-						<td><%= list.get(i).getPz_address() %></td>
-						<td><%= list.get(i).getPz_phone() %></td>
-						<td><%= list.get(i).getWd_time() %></td>
-						<td><%= list.get(i).getWe_time() %></td>
-						<td><%= list.get(i).getClosed() %></td>
-						<td><input type="checkbox" name="check" id=<%=index%>
-							value=<%=index++%> onclick="CheckMark()" /></td>
+						
+						<td><%= 20 * (pageNumber - 1) + index %></td> 
+						<td name="pz_name"><%= list.get(i).getPz_name() %></td>
+						<td name="pz_address"><%= list.get(i).getPz_address() %></td>
+						<td name="pz_phone"><%= list.get(i).getPz_phone() %></td>
+						<td name="wd_time"><%= list.get(i).getWd_time() %></td>
+						<td name="we_time"><%= list.get(i).getWe_time() %></td>
+						<td name="closed"><%= list.get(i).getClosed() %></td>
+						<td>
+							<form action="../addfavoritesAction.jsp" onsubmit="return CheckMark()">
+								<input type="hidden" name="pzid" value="<%= list.get(i).getPz_id() %>">
+								<input type="submit" value="추가" name="subbtn">
+							</form>
+						</td>
 					</tr>
+					
 					<%
+					index++;
 					}
 					%>
 				</tbody>
@@ -171,13 +180,13 @@
 			<%
 			if (pageNumber != 1) {
 			%>
-			<a href="all.jsp?pageNumber=<%=pageNumber - 1%>"
+			<a href="all.jsp?pageNumber=<%=pageNumber - 1%>&area1=<%=area1%>&area2=<%=area2%>"
 				class="btn btn-success btn-arraw-left">이전</a>
 			<%
 			}
-			if (pzDAO.nextPage(pageNumber + 1)) {
+			if (pzDAO.nextPage(pageNumber + 1)) { 
 			%>
-			<a href="all.jsp?pageNumber=<%=pageNumber + 1%>"
+			<a href="all.jsp?pageNumber=<%=pageNumber + 1%>&area1=<%=area1%>&area2=<%=area2%>"
 				class="btn btn-success btn-arraw-left">다음</a>
 			<%
 			}
@@ -185,11 +194,10 @@
 			<!--<input type="submit" class="btn btn-primary pull-right" value="신고" style="font-size:20px"> -->
 		</div>
 	</div>
-
-	<br>
+	</div>
 	
 	<!-- 푸터 영역 시작 -->
-    <div class="footer" style="height : 200px;">
+    <div class="footer footer_btn_have" style="height : 200px;">
         <footer>
             <div class="footer_detail" style="position : absolute;margin-left : 450px;">
                 <br>

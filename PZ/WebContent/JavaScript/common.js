@@ -216,35 +216,21 @@ function findPW_chk() {
 
 /*즐겨찾기 체크박스 눌렀을 때 반응 */
 function CheckMark() {
-	System.out.println(document.querySelector("input[name=check]).checked"));
-	if ($("input:checkbox[name=check]").is(":checked") == false) {
-		if (confirm("즐겨찾기에 추가하시겠습니까?") == true) {
-			alert("즐겨찾기에 추가되었습니다.");
-			const checked = document.querySelectorAll('input[name="check"]:checked');
-			this.checked = true;
-			this.form.submit();
-
+	if (confirm("즐겨찾기에 추가하시겠습니까?") == true) {
+			return true;	
 		}
 		else {
 			alert("취소되었습니다.");
-			const checked = document.querySelectorAll('input[name="check"]:checked');
-			this.checked = false;
-			this.form.submit();
-		}
+			return false;			
 	}
-	else if ($("input:checkbox[name=check]").is(":checked") == false) {
-		if (confirm("즐겨찾기 취소하시겠습니까?") == false) {
-			alert("즐겨찾기가 취소되었습니다.");
-			const checked = document.querySelectorAll('input[name="check"]:checked');
-			this.form.submit();
-			this.checked = true;
-		}
-		else {
-			alert("작업이 취소되었습니다.");
-			this.checked = false;
-			this.form.submit();
-		}
-	}
+}
 
-
+function CheckDelete() {
+    if (confirm("삭제하시겠습니까?") == true) {
+        return true;
+    }
+    else {
+        alert("취소되었습니다.");
+        return false;            
+    }
 }

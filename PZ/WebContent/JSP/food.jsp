@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width", initial-scale="1">
 	<!-- 웹 페이지와 외부 자원간의 관계를 정의, 주로 스타일시트(CSS)파일 링크에 사용됨. -->
-	<link rel="stylesheet" type="text/css" href="../CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/table.css">
 	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 	<title>나도반함-식당</title>
 	
@@ -35,6 +35,7 @@
 		area2 = request.getParameter("area2");
 	}
 	%>
+	<div class="wrapper">
 	<div>
 		<!-- 헤더영역 시작 -->
 		<!-- 사이트의 소개나 네비게이션 등을 표시하는 영역 -->
@@ -127,9 +128,9 @@
 
 	<div class="container">
 		<div class="row" style="margin:50px auto auto 180px;">
-			<table class="table table-striped table-bordered table-hover" style="width: 1600px;	text-align:center; border:1px solid #000000; border-collapse: collapse;">
+			<table class="table table-striped table-bordered table-hover fz_table" style="width: 1600px; text-align:center; border-collapse: collapse; padding-bottom: 30px;">
 				<thead>
-					<tr style="border: 1px solid #000000">
+					<tr>
 						<th style="text-align: center;">번호</th>
 						<th style="text-align: center;">이름</th>
 						<th style="text-align: center;">주소</th>
@@ -179,10 +180,10 @@
 			<!--<input type="submit" class="btn btn-primary pull-right" value="신고" style="font-size:20px"> -->
 		</div>
 	</div>
-
-	<br>
+	</div>
+	
 	<!-- 푸터 영역 시작 -->
-    <div class="footer" style="height : 200px;">
+    <div class="footer footer_btn_have" style="height : 200px;">
         <footer>
             <div class="footer_detail" style="position : absolute;margin-left : 450px;">
                 <br>

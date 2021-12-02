@@ -4,12 +4,25 @@
   HTML 파일을 작성할 때 글자의 크기나 색깔, 여백 등의 각종 스타일을 지정할 떄 사용하는 것 입니다.
 */
 /* 상단에 여백 없애기 */
-body{
+html, body{
 	margin : 0;
 	padding : 0;
+	width : 100%;
+	height : 100%;
 	background-color: rgb(255, 239, 214);
 }
-/*rgb(255, 239, 214)*/
+.wrapper{
+	height : auto;
+	min-height : 100%;
+	padding-bottom : 200px;
+}
+
+.mypage_wrapper{
+	height : auto;
+	min-height : 100%;
+	padding-bottom : 100px;	
+}
+
 
 /* 텍스트 무늬 없애기, a태그 글씨체 지정 */
 a{
@@ -44,7 +57,7 @@ p{
 	width:40px;
 	margin-left: 850px;
 	position:absolute;
-	margin-top: 8px;
+	margin-top: 15px;
 }
 
 .button_login{
@@ -85,6 +98,10 @@ p{
 	text-align: center;
 }
 
+.top_menu_photo p{
+	font-family: 'Jua', sans-serif;
+}
+
 .main_table p{
 	color : black;
 }
@@ -95,44 +112,50 @@ p{
 
 /* 푸터 홈페이지 설명 영역 */
 .footer {
-    width : 100%;
-    height : 250px;
-    position : relative;
-    bottom : 0px;
-    background-color: rgba(240, 182, 57, 0.329);
-    color : rgb(180, 144, 44);
+	width : 100%;
+	height : 200px;
+	position : relative;
+	transform : translateY(-100%);
+	left : 0px;
+	bottom : 0px;
+	background-color: rgba(240, 182, 57, 0.329);
+	color : rgb(180, 144, 44);
 }
 
+.footer_btn_have{
+    margin-top : 20px;
+}
 
 .footer_detail{
-    position: absolute;
-    width : 300px;
-    margin-left : 450px;
+	position: absolute;
+	width : 300px;
+	margin-left : 450px;
 }
 
 .footer_detail p{
-    font-size : 15px;
+	font-size : 15px;
 }
 
 .footer_company{
-    position : absolute;
-    width: 300px;
-    margin-left : 810px;
+	position : absolute;
+	width: 300px;
+	margin: 0 auto;
 }
 
 .footer_company p{
-    font-size : 15px;
+	font-size : 15px;
 }
 
 .footer_bank{
-    position : relative;
-    width: 300px;
-    margin-left : 1170px;
+	position : relative;
+	width: 300px;
+	margin-left : 1170px;
 }
 
 .footer_bank p{
-    font-size : 15px;
+	font-size : 15px;
 }
+
 
 /*rgb(255,221,223)*/
 .type{
@@ -240,6 +263,10 @@ table td {
 }
 
 /*-------------테이블 받아오기(로그인 전)----------*/
+.container{
+	margin : 0 auto;	
+}
+
 .container th{
 	text-align : center;
 	font-family: 'Jua', sans-serif;
@@ -251,3 +278,5 @@ table td {
 	font-family: 'Jua', sans-serif;
 	height : 25px;
 }
+
+

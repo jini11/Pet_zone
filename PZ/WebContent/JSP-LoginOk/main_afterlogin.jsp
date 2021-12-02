@@ -15,6 +15,7 @@
 
 
 <body onload="afterlogin_showImage()">
+	<div class="wrapper">
 	<div>
 		<!-- 헤더영역 시작 -->
 		<!-- 사이트의 소개나 네비게이션 등을 표시하는 영역 -->
@@ -54,7 +55,8 @@
 	<!-- 콘텐츠 및 섹션 영역 끝 -->
 	<br>
 	<hr style = "width : 900px;">
-	<br>
+	</div>
+	
 	<!-- 푸터 영역 시작 -->
     <div class="footer" style="height : 200px;">
         <footer>

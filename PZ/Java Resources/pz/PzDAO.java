@@ -40,7 +40,7 @@ public class PzDAO {
 	public ArrayList<Pz> getList(int pageNumber, String type, String area1, String area2) {
 		String SQL = "";
 		int key = 0;
-		if (area1 == "" && area2 == "") {
+		if (area1.equals("") && area2.equals("")) {
 			if(type == "all")
 				SQL = "SELECT * FROM pet_zone ORDER BY pz_id LIMIT ?, 20";
 			else if(type == "food")
@@ -69,7 +69,7 @@ public class PzDAO {
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 					Pz pz = new Pz();
-					// pz.setPz_id(rs.getString(1).substring(1,rs.getString(1).length()));
+					pz.setPz_id(rs.getString(1));
 					pz.setPz_name(rs.getString(2));
 					pz.setType_id(rs.getString(3));
 					pz.setPz_address(rs.getString(4));
@@ -83,7 +83,7 @@ public class PzDAO {
 				e.printStackTrace();
 			}
 		} else {
-
+ 
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(SQL);
 				pstmt.setString(1, area1 + " " + area2 + "%");
@@ -91,7 +91,7 @@ public class PzDAO {
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 					Pz pz = new Pz();
-					// pz.setPz_id(rs.getString(1).substring(1,rs.getString(1).length()));
+					pz.setPz_id(rs.getString(1));
 					pz.setPz_name(rs.getString(2));
 					pz.setType_id(rs.getString(3));
 					pz.setPz_address(rs.getString(4));
@@ -127,5 +127,32 @@ public class PzDAO {
 	public void bookmark(String str) {
 		System.out.println(str);
 	}
-
+	
+	public ArrayList<Pz> getPzList(String pz_id) {
+		String SQL = "SELECT * FROM pet_zone WHERE pz_id = ? ORDER BY pz_id";
+		ArrayList<Pz> list = new ArrayList<>();
+		
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, pz_id);
+			//pstmt.setInt(1, getNext() + (pageNumber - 1) * 20 - 1);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Pz pz = new Pz();
+				pz.setPz_id(rs.getString(1));
+				pz.setPz_name(rs.getString(2));
+				pz.setType_id(rs.getString(3));
+				pz.setPz_address(rs.getString(4));
+				pz.setPz_phone(rs.getString(5));
+				pz.setWd_time(rs.getString(6));
+				pz.setWe_time(rs.getString(7));
+				pz.setClosed(rs.getString(8));
+				list.add(pz);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

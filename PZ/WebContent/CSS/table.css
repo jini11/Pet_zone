@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+/* 상단에 여백 없애기 */
+html, body{
+	margin : 0;
+	padding : 0;
+	width : 100%;
+	height : 100%;
+	background-color: rgb(255, 239, 214);
+}
+.wrapper{
+	height : auto;
+	min-height : 100%;
+	padding-bottom : 200px;
+}
+
+.mypage_wrapper{
+	height : auto;
+	min-height : 100%;
+	padding-bottom : 100px;	
+}
+
+
+/* 텍스트 무늬 없애기, a태그 글씨체 지정 */
+a{
+	text-decoration : none;
+	font-family: 'Jua', sans-serif;
+}
+
+p{
+	text-decoration : none;
+}
+
+/* 헤더 상단 바 부분 */
+.header {
+	background-color: rgb(247,50,63);
+	position: relative;
+	margin: 0 auto;
+}
+/*#FE6D73*/
+.nav {
+	margin : 0 auto;
+	width: 1200px;
+	height: 70px;
+	padding-top: 10px;
+}
+
+.img_logo{
+	width : 150px;
+	margin-top : 5px;
+}
+
+.mypage_logo{
+	width:40px;
+	margin-left: 850px;
+	position:absolute;
+	margin-top: 15px;
+}
+
+.button_login{
+	text-align:center;
+	background-color: #FFCB77;
+	border: 10px solid  #FFCB77;
+	border-radius: 30px;
+	color: white;
+	position : absolute;
+	right : 20%;
+	margin-top : 1%;
+}
+
+/* 메인 화면 사진 들어가는 부분 */
+.photo {
+	position: relative;
+	margin : 50px auto;
+	width: 1000px;
+}
+
+.main_img{
+	width :1000px;
+	border : 0;
+}
+
+/* 메인 화면 하단바 메뉴 */
+.main_table{
+	position: relative;
+	width: 800px;
+	margin: auto;
+	border-style : none;
+	text-align:center;
+}
+
+/* 상단 부분 메뉴 사진 표시*/
+.top_menu_photo{
+	margin-top : 40px;
+	text-align: center;
+}
+
+.top_menu_photo p{
+	font-family: 'Jua', sans-serif;
+}
+
+.main_table p{
+	color : black;
+}
+
+.main_table img{
+	width : 100px;
+}
+
+/* 푸터 홈페이지 설명 영역 */
+.footer {
+	width : 100%;
+	height : 200px;
+	position : relative;
+	transform : translateY(-100%);
+	left : 0px;
+	bottom : 0px;
+	background-color: rgba(240, 182, 57, 0.329);
+	color : rgb(180, 144, 44);
+}
+
+
+.footer_detail{
+	position: absolute;
+	width : 300px;
+	margin-left : 450px;
+}
+
+.footer_detail p{
+	font-size : 15px;
+}
+
+.footer_company{
+	position : absolute;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.footer_company p{
+	font-size : 15px;
+}
+
+.footer_bank{
+	position : relative;
+	width: 300px;
+	margin-left : 1170px;
+}
+
+.footer_bank p{
+	font-size : 15px;
+}
+
+
+/*rgb(255,221,223)*/
+.type{
+	object-fit: cover;
+}
+
+.fz_table {
+  border-collapse: collapse;
+  text-align: left;
+  margin: 20px 10px;
+  
+}
+.fz_table thead th {
+  width: 150px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #fff;
+  background: rgb(247,50,63);
+  margin: 20px 10px;
+  
+}
+.fz_table tbody th {
+  width: 150px;
+  height : 30px;
+  padding: 10px;
+  text-align : center;
+  font-family: 'Jua', sans-serif;
+}
+.fz_table td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  text-align : center;
+  font-family: 'Jua', sans-serif;
+  height : 25px;
+}
+.fz_table tr:nth-child(odd) {
+  background-color: white;
+}
+.fz_table tr:nth-child(even) {
+  background-color: rgb(247,50,63);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.fz_table-td-1 {
+	width: 2px;
+}

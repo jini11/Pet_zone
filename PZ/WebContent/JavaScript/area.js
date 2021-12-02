@@ -66,7 +66,7 @@ function change_area(key, sel) {
 
 	for (i = sel.length - 1; i >= 0; i--)
 		sel.options[i] = null;
-	sel.options[0] = new Option('-선택-', '', '', 'true');
+	sel.options[0] = new Option('전체', '', '', 'true');
 	for (i = 0; i < name.length; i++) {
 		sel.options[i + 1] = new Option(name[i], name[i]);
 	}

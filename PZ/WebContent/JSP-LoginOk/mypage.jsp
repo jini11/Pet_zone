@@ -20,6 +20,7 @@
 <title>마이페이지-정보수정</title>
 </head>
 <body>
+	<div class="mypage_wrapper">
 	<div>
 		<!-- 헤더영역 시작 -->
 		<!-- 사이트의 소개나 네비게이션 등을 표시하는 영역 -->
@@ -89,9 +90,7 @@
 		</form>
 
 	</div>
-	<br>
-	<br>
-	<br>
+	</div>
 	
 	<!-- 푸터 영역 시작 -->
     <div class="footer" style="height : 200px;">
