@@ -13,6 +13,7 @@
 <!-- 웹 페이지와 외부 자원간의 관계를 정의, 주로 스타일시트(CSS)파일 링크에 사용됨. -->
 <link rel="stylesheet" type="text/css" href="../CSS/table.css">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?ver=1"></script>
 <title>나도반함-식당</title>
 </head>
 
@@ -70,7 +71,7 @@
 							<th style="width: 500px;"><select name="area1" id="area1"
 								onChange="change_area(this.value, area2)"
 								style="width: 500px; height: 30px; margin-top: 5px;">
-									<option>-선택-</option>
+									<option value="" <% if(area1.contains("전체")) out.println("selected"); %>>전체</option>
 									<option value='1' <% if(area1.contains("서울특별시")) out.println("selected"); %>>서울특별시</option>
 									<option value='2' <% if(area1.contains("부산광역시")) out.println("selected"); %>>부산광역시</option>
 									<option value='3' <% if(area1.contains("대구광역시")) out.println("selected"); %>>대구광역시</option>
@@ -91,7 +92,7 @@
 							</select></th>
 							<th><select name="area2" id="area2"
 								style="width: 500px; height: 30px; margin-top: 5px;">
-									<option>-선택-</option>
+									<option value="">전체</option>
 									<option value='216'>광양시</option>
 									<option value='217'>나주시</option>
 									<option value='218'>목포시</option>
@@ -142,10 +143,10 @@
 				</thead>
 				<tbody>
 					<%
-					String[] arr = {"서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시", "울산광역시","세종특별자치시", "강원도", "경기도", "경상남도", "경상북도", "전라남도", "전라북도", "제주특별자치도", "충청남도", "충청북도"};
+					String[] arr = {"전체", "서울특별시", "부산광역시", "대구광역시", "인천광역시", "광주광역시", "대전광역시", "울산광역시","세종특별자치시", "강원도", "경기도", "경상남도", "경상북도", "전라남도", "전라북도", "제주특별자치도", "충청남도", "충청북도"};
 					String str ="";
 					try {
-						str = arr[Integer.parseInt(area1)-1];
+						str = arr[Integer.parseInt(area1)];
 						System.out.println(str);
 					} catch (Exception e) {
 					}
@@ -161,10 +162,15 @@
 						<td><%=list.get(i).getWd_time()%></td>
 						<td><%=list.get(i).getWe_time()%></td>
 						<td><%=list.get(i).getClosed()%></td>
-						<td><input type="checkbox" name="check" id=<%=index%>
-							value=<%=index++%> onclick="CheckMark()" /></td>
+						<td>
+							<form action="../addfavoritesAction.jsp" onsubmit="return CheckMark()">
+								<input type="hidden" name="pzid" value="<%= list.get(i).getPz_id() %>">
+								<input type="submit" value="추가" name="subbtn">
+							</form>
+						</td>
 					</tr>
 					<%
+					index++;
 					}
 					%>
 				</tbody>
@@ -172,13 +178,13 @@
 			<%
 			if (pageNumber != 1) {
 			%>
-			<a href="food.jsp?pageNumber=<%=pageNumber - 1%>"
+			<a href="food.jsp?pageNumber=<%=pageNumber - 1%>&area1=<%=area1%>&area2=<%=area2%>"
 				class="btn btn-success btn-arraw-left">이전</a>
 			<%
 			}
 			if (pzDAO.nextPage(pageNumber + 1)) {
 			%>
-			<a href="food.jsp?pageNumber=<%=pageNumber + 1%>"
+			<a href="food.jsp?pageNumber=<%=pageNumber + 1%>&area1=<%=area1%>&area2=<%=area2%>"
 				class="btn btn-success btn-arraw-left">다음</a>
 			<%
 			}
