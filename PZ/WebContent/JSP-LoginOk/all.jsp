@@ -64,12 +64,11 @@
 		<div style="margin: 50px auto auto 180px;">
 			<form name="select_area">
 				<table class="area"
-					style="width: 1100px; height: 80px; text-align: center; border: 1px solid #000000; border-collapse: collapse;">
+					style="width: 600px; height: 80px; text-align: center; border-collapse: collapse;">
 					<thead>
-						
-							<th style="width: 500px;"><select name="area1" id="area1"
-								onChange="change_area(this.value, area2)"
-								style="width: 500px; height: 30px; margin-top: 5px;">
+							<th><select name="area1" id="area1" class="select"
+                                onChange="change_area(this.value, area2)"
+                                style="width: 150px; height: 30px; margin-top: 5px;">
 									<option value="" <% if(area1.contains("전체")) out.println("selected"); %>>전체</option>
 									<option value='1' <% if(area1.contains("서울특별시")) out.println("selected"); %>>서울특별시</option>
 									<option value='2' <% if(area1.contains("부산광역시")) out.println("selected"); %>>부산광역시</option>
@@ -89,8 +88,8 @@
 									<option value='16' <% if(area1.contains("충청남도")) out.println("selected"); %>>충청남도</option>
 									<option value='17' <% if(area1.contains("충청북도")) out.println("selected"); %>>충청북도</option>
 							</select></th>
-							<th><select name="area2" id="area2"
-								style="width: 500px; height: 30px; margin-top: 5px;">
+							<th><select name="area2" id="area2" class="select"
+                                style="width: 150px; height: 30px; margin-top: 5px;">
 									<option value="">전체</option>
 									<option value='216'>광양시</option>
 									<option value='217'>나주시</option>
@@ -115,9 +114,9 @@
 									<option value='236'>해남군</option>
 									<option value='237'>화순군</option>
 							</select></th>
-							<th style="width: 500px; height: 25px; margin-left: 5px;">
-								<button type="submit" style="padding: 4px 20px 4px 20px; margin-top: 2px;">검색</button>
-								</th>
+							<th style="width: 150px; height: 25px; margin-left: 5px;">
+                                <button class="search_btn" type="submit" style="padding: 4px 20px 4px 20px; margin-top: 2px;">검색</button>
+                            </th>
 					</thead>
 				</table>
 			</form>
@@ -177,20 +176,25 @@
 					%>
 				</tbody>
 			</table>
-			<%
-			if (pageNumber != 1) {
-			%>
-			<a href="all.jsp?pageNumber=<%=pageNumber - 1%>&area1=<%=area1%>&area2=<%=area2%>"
-				class="btn btn-success btn-arraw-left">이전</a>
-			<%
-			}
-			if (pzDAO.nextPage(pageNumber + 1)) { 
-			%>
-			<a href="all.jsp?pageNumber=<%=pageNumber + 1%>&area1=<%=area1%>&area2=<%=area2%>"
-				class="btn btn-success btn-arraw-left">다음</a>
-			<%
-			}
-			%>
+			<!-- 검색 후 이전페이지 / 다음페이지 이미지 적용 -->
+            <div class="arrow_btn">
+                <%
+                if (pageNumber != 1) {
+                %>
+                <a href="all.jsp?pageNumber=<%=pageNumber - 1%>&area1=<%=area1%>&area2=<%=area2%>"
+                    class="btn-arraw-left"><img
+                        src="../Images/left-arrow.png" class="img_left"></a>    
+                <%
+                }
+                if (pzDAO.nextPage(pageNumber + 1)) {
+                %>
+                <a href="all.jsp?pageNumber=<%=pageNumber + 1%>&area1=<%=area1%>&area2=<%=area2%>"
+                    class="btn-arraw-right"><img
+                        src="../Images/right-arrow.png" class="img_right"></a>
+                <%
+                }
+                %>
+            </div>
 			<!--<input type="submit" class="btn btn-primary pull-right" value="신고" style="font-size:20px"> -->
 		</div>
 	</div>
