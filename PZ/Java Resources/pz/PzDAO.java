@@ -44,22 +44,22 @@ public class PzDAO {
 			if(type == "all")
 				SQL = "SELECT * FROM pet_zone ORDER BY pz_id LIMIT ?, 20";
 			else if(type == "food")
-				SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D001','D002') ORDER BY pz_id LIMIT ?, 20";
+				SQL = "SELECT * FROM pet_zone p, pz_kind k WHERE k.kind_id IN ('D001','D002') AND p.type_id=k.kind_id ORDER BY p.pz_id LIMIT ?, 20";
 			else if(type == "accommodation")
-				SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D003','D004') ORDER BY pz_id LIMIT ?, 20";
+				SQL = "SELECT * FROM pet_zone p, pz_kind k WHERE k.kind_id IN ('D003','D004','D005') AND p.type_id=k.kind_id ORDER BY p.pz_id LIMIT ?, 20";
 			else if(type == "outdoors")
-				SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D005','D006','D007') ORDER BY pz_id LIMIT ?, 20";
+				SQL = "SELECT * FROM pet_zone p, pz_kind k WHERE k.kind_id IN ('D006','D007') AND p.type_id=k.kind_id ORDER BY p.pz_id LIMIT ?, 20";
 			key = 1;
 		} else {
 			key = 0;
 			if (type == "all")
 				SQL = "SELECT * FROM pet_zone WHERE pz_address LIKE ? ORDER BY pz_id LIMIT ?, 20";
 			else if (type == "food")
-				SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D001','D002') AND pz_address LIKE ? ORDER BY pz_id LIMIT ?, 20";
+				SQL = "SELECT * FROM pet_zone p, pz_kind k WHERE k.kind_id IN ('D001','D002') AND p.type_id=k.kind_id AND p.pz_address LIKE ? ORDER BY p.pz_id LIMIT ?, 20";
 			else if (type == "accommodation")
-				SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D003','D004') AND pz_address LIKE ? ORDER BY pz_id LIMIT ?, 20";
+				SQL = "SELECT * FROM pet_zone p, pz_kind k WHERE k.kind_id IN ('D003','D004','D005') AND p.type_id=k.kind_id AND p.pz_address LIKE ? ORDER BY p.pz_id LIMIT ?, 20";
 			else if (type == "outdoors")
-				SQL = "SELECT * FROM pet_zone WHERE type_id IN ('D005','D006','D007') AND pz_address LIKE ? ORDER BY pz_id LIMIT ?, 20";
+				SQL = "SELECT * FROM pet_zone p, pz_kind k WHERE k.kind_id IN ('D006','D007') AND p.type_id=k.kind_id AND p.pz_address LIKE ? ORDER BY p.pz_id LIMIT ?, 20";
 		}
 		ArrayList<Pz> list = new ArrayList<Pz>();
 		if (key == 1) {
