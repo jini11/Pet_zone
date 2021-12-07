@@ -174,20 +174,25 @@
 					%>
 				</tbody>
 			</table>
-			<%
-			if (pageNumber != 1) {
-			%>
-			<a href="food.jsp?pageNumber=<%=pageNumber - 1%>&area1=<%=area1%>&area2=<%=area2%>"
-				class="btn btn-success btn-arraw-left">이전</a>
-			<%
-			}
-			if (pzDAO.nextPage(pageNumber + 1)) {
-			%>
-			<a href="food.jsp?pageNumber=<%=pageNumber + 1%>&area1=<%=area1%>&area2=<%=area2%>"
-				class="btn btn-success btn-arraw-left">다음</a>
-			<%
-			}
-			%>
+			<!-- 검색 후 이전페이지 / 다음페이지 이미지 적용 -->
+            <div class="arrow_btn">
+                <%
+                if (pageNumber != 1) {
+                %>
+                <a href="all.jsp?pageNumber=<%=pageNumber - 1%>&area1=<%=area1%>&area2=<%=area2%>"
+                    class="btn-arraw-left"><img
+                        src="../Images/left-arrow.png" class="img_left"></a>    
+                <%
+                }
+                if (pzDAO.nextPage(pageNumber + 1)) {
+                %>
+                <a href="all.jsp?pageNumber=<%=pageNumber + 1%>&area1=<%=area1%>&area2=<%=area2%>"
+                    class="btn-arraw-right"><img
+                        src="../Images/right-arrow.png" class="img_right"></a>
+                <%
+                }
+                %>
+            </div>
 			<!--<input type="submit" class="btn btn-primary pull-right" value="신고" style="font-size:20px"> -->
 		</div>
 	</div>
