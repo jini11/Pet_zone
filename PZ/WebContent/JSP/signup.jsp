@@ -14,7 +14,7 @@
 <body>
     <section class="signup-form">
       <h1>Sign Up</h1> 
-      <form name="form" action="../signupAction.jsp">  <!--연동하기 (예를 들어, signup.php로 함), method는 post방식과 get방식 중 하나-->
+      <form name="form" action="../signupAction.jsp">  
           <div class="int-area">
             <input id="name" type="text" name="userName" autocomplete="off" required> 
             <label for="name"> 이름 </label> <!--이름만 눌러도 입력창 활성화-->

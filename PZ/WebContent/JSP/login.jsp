@@ -26,7 +26,7 @@
 				<label for="pw">PASSWORD</label>
 			</div>
 			<div class="btn-area">
-				<button type="submit" style="font-family:'Jua', sans-serif;">LOGIN</button> <!--DB에 해당 고객의 정보가 일치하면 mypage로 넘어가야함-->
+				<button type="submit" style="font-family:'Jua', sans-serif;">LOGIN</button> 
 			</div>
 		</form>
 		<div class="caption">

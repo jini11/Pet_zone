@@ -21,7 +21,7 @@
 				<label for="edit_email">새 이메일</label>
 			</div>
 			<div class="btn-area">
-				<button type="submit" style="font-family:'Jua', sans-serif;">변경하기</button> <!--DB에 해당 고객의 정보가 일치하면 mypage로 넘어가야함-->
+				<button type="submit" style="font-family:'Jua', sans-serif;">변경하기</button> 
 			</div>
 		</form>
 

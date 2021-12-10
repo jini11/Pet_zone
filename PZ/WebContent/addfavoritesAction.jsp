@@ -18,7 +18,6 @@
 	   PrintWriter script = response.getWriter();
 	   ArrayList<String> list = (ArrayList)session.getAttribute("pztr");
 	   String pz_id = request.getParameterValues("pzid")[0];
-	   System.out.println("pz_id: "+pz_id);
 	   
 	   FvDAO fvDAO = new FvDAO();
 	   int result = fvDAO.checkFavorites((String)session.getAttribute("userID"), pz_id);
@@ -45,3 +44,4 @@
 	%>
 </body>
 </html>
+

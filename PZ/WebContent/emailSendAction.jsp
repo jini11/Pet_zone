@@ -45,7 +45,7 @@
 		    script.println("</script>");
 	   }else{
 		   	String star_pw = userDAO.fourcutPw(password_result);
-		   	String text = "비밀번호는 "+star_pw+ " 입니다."; /*동빈나 9강 - 18:12*/
+		   	String text = "비밀번호는 "+star_pw+ " 입니다."; 
 		   	System.out.println("333333");
 		   	
 		   	Properties props = new Properties();

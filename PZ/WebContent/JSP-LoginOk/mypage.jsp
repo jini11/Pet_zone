@@ -43,7 +43,7 @@
 	<br>
 	<!-- 하얀색 백그라운드 div -->
 	<div class="white_background">
-		<a href="bookmark.jsp"><img src="../Images/bookmark.png"
+		<a href="bookmark.jsp"><img src="../Images/bookmark_star.png"
 			class="bookmark"> </a>
 		<!-- 즐겨찾기 별모양 넣을 부분 -->
 		<br> <img src="../Images/mypage_profile_logo.png"

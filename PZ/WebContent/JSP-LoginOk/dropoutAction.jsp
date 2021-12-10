@@ -19,6 +19,7 @@ request.setCharacterEncoding("utf-8");
 	<%
 		UserDAO userDAO = new UserDAO();
 		
+	    
 		int result = userDAO.deleteUser((String)session.getAttribute("userID"));
 		if(result == 0){
 	        PrintWriter script = response.getWriter();

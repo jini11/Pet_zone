@@ -235,6 +235,8 @@ public class UserDAO {
 		}
 		return -1;
 	}
+	
+	
 
     public String fourcutPw(String password) {
             String fourPw = password.substring(0,4);
