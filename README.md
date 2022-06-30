@@ -60,7 +60,9 @@
 ![image](https://user-images.githubusercontent.com/78905126/176639805-a425576e-14c3-413f-af79-2082376e906a.png)
 
 #### (3) ID/PW 찾기  
-![image](https://user-images.githubusercontent.com/78905126/176639906-d66065a5-7c8d-42da-b171-069cb0f46cd2.png)  
+![image](https://user-images.githubusercontent.com/78905126/176639906-d66065a5-7c8d-42da-b171-069cb0f46cd2.png) 
+
+
 ![image](https://user-images.githubusercontent.com/78905126/176642242-b46aeb0e-70e6-4a56-b5d2-dede71d4af18.png)  
   
 
