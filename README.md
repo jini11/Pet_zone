@@ -1,10 +1,26 @@
 # Pet_zone
 
 
-데이터베이스 프로그래밍 시간에 만든 펫존 검색 웹사이트입니다.   
+데이터베이스 프로그래밍 시간에 만든 펫존 검색 웹사이트입니다.
+
+
+![image](https://user-images.githubusercontent.com/78905126/176639438-5550b42b-f149-4b5e-9c27-865919f6c925.png)
+
 
 ### 펫존이란?  
 펫존은 펫(pet)+존(zone)의 합성어로 반려동물과 같이 갈 수 있는 장소를 의미합니다.  
+
+### 진행 기간  
+
+11.17: 로그인 기능까지 구현 완료  
+11.18: 회원가입 기능 구현 완료  
+11.19-12.01: 로그아웃~옵션 별 펫존 보기 구현 완료  
+12.02: 지역 별 펫존 보기 가능  
+12.04: 즐겨찾기 추가/삭제 가능  
+12.06: 모든 기능 구현 완료  
+12.10: 발표 마무리   
+
+=> 2021.10.25 ~ 2021.12.10(약 5주)  
 
 
 ### 역할 분담  
@@ -20,32 +36,48 @@
 (2) 데이터베이스 생성(mysql)  
 데이터베이스를 생성하고 csv 파일을 데이터베이스에 load하였다.  
 
-(3) JSP 구성  
+(3) JSP를 이용해 기능 구성  
 
-### 기능 정리  
-(1) 로그인  
-(2) 회원가입  
-(3) 로그아웃  
-(4) 탈퇴하기  
-(5) 펫존 보기  
-- 옵션(전체, 숙소, 음식점, 야외) 별 펫존 보기  
-- 지역 별 펫존 보기  
+### 개발 환경    
+![image](https://user-images.githubusercontent.com/78905126/176638903-f2661681-0156-4c90-9304-1993fc4412f6.png)
 
-(6) 즐겨찾기 추가  
-(7) 마이페이지 정보 수정  
-(8) 즐겨찾기 삭제  
+### DB 테이블 구성  
+![image](https://user-images.githubusercontent.com/78905126/176638998-f6208f98-557c-4d81-b638-b4621880a96c.png)
 
-### 진행 상황  
+### 기능 정리 
+#### (0) 개요    
+![image](https://user-images.githubusercontent.com/78905126/176640823-bb5540ca-0fa0-489d-beda-7b8ec203e3be.png)
 
-11.17: 로그인 기능까지 구현 완료  
-11.18: 회원가입 기능 구현 완료  
-11.19-12.01: 로그아웃~옵션 별 펫존 보기 구현 완료  
-12.02: 지역 별 펫존 보기 가능  
-12.04: 즐겨찾기 추가/삭제 가능  
-12.06: 모든 기능 구현 완료  
-12.10: 발표 마무리   
+#### (1) 로그인  
+![image](https://user-images.githubusercontent.com/78905126/176639819-3edbf046-294c-4fd8-b701-0c93cd469dcd.png)
 
-=> 진행 기간: 총 5주  
+#### (2) 회원가입  
+![image](https://user-images.githubusercontent.com/78905126/176639805-a425576e-14c3-413f-af79-2082376e906a.png)
+
+#### (3) ID/PW 찾기  
+![image](https://user-images.githubusercontent.com/78905126/176639906-d66065a5-7c8d-42da-b171-069cb0f46cd2.png)  
+![image](https://user-images.githubusercontent.com/78905126/176642242-b46aeb0e-70e6-4a56-b5d2-dede71d4af18.png)  
+  
+
+#### (4) 탈퇴하기  
+![image](https://user-images.githubusercontent.com/78905126/176641478-32540ff5-27cc-4958-bf2a-17e052a98b5b.png)
+
+
+#### (5) 펫존 보기  
+##### - 옵션(전체, 숙소, 음식점, 야외) 별 펫존 보기  
+![image](https://user-images.githubusercontent.com/78905126/176639747-e760f0c5-a523-4e99-b743-4f385fad95f3.png)  
+
+##### - 지역 별 펫존 보기  
+![image](https://user-images.githubusercontent.com/78905126/176639781-a79aa046-f1e6-4a8d-9aeb-409e9945396f.png)  
+ 
+#### (6) 즐겨찾기 추가  
+![image](https://user-images.githubusercontent.com/78905126/176640099-ca1885cd-c6dd-41c9-a7eb-fdfb1f3cac10.png)
+
+#### (7) 마이페이지 정보 수정  
+![image](https://user-images.githubusercontent.com/78905126/176640015-9938326c-8896-49ca-8cb6-e681f7d628b2.png)
+
+#### (8) 즐겨찾기 삭제  
+![image](https://user-images.githubusercontent.com/78905126/176641599-a1985cf1-2d06-414e-8182-e1b0f38b065b.png)
 
 ### 소감  
 
