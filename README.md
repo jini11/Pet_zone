@@ -44,6 +44,10 @@
 (3) JSP를 이용해 기능 구성  
 
 ## 개발 환경    
+(1) 크롤러(dog_shop.ipynb)
+Google Colab, Selenium, Python 사용  
+  
+(2) 웹  
 ![image](https://user-images.githubusercontent.com/78905126/176638903-f2661681-0156-4c90-9304-1993fc4412f6.png)
 
 ## DB 테이블 구성  
