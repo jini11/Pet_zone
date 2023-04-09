@@ -7,6 +7,6 @@ public class Gmail extends Authenticator{
 	
 	@Override
 	protected PasswordAuthentication getPasswordAuthentication() {
-		return new PasswordAuthentication("lje8213@gmail.com","angel1013*");
+		return new PasswordAuthentication("111@gmail.com","pw");
 	}
 }
